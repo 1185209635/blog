@@ -88,4 +88,33 @@ class UserController extends Controller
         }
 
     }
+
+    /**
+     * 删除确认操作
+     * @param $id
+     */
+    public function delete($id){
+        // 1. 根据id找到用户
+        $user = User::find($id);
+
+        // 2. 删除选中的数据
+        $res = $user->delete();
+
+        // 3. 返回信息
+        if ($res){
+
+            $data = [
+                'status'=>0,
+                'massage'=>'删除成功'
+            ];
+        } else {
+            $data = [
+                'status'=>-1,
+                'massage'=>'删除失败'
+            ];
+
+        }
+
+        return $data;
+    }
 }

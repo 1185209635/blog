@@ -27,3 +27,16 @@ Route::post('/user/update','UserController@update');
 // 删除用户数据
 Route::get('/user/delete/{id}','UserController@delete');
 
+// 后台登陆路由
+Route::get('/admin/login','Admin\LoginController@login');
+
+// 验证码路由
+Route::get('/code/captcha/{tmp}','Admin\LoginController@captcha');
+// 登陆表单验证路由
+Route::post('/admin/dologin','Admin\LoginController@dologin');
+
+//  首页跳转
+Route::get('/admin/index','Admin\indexController@index');
+
+// 加密算法
+Route::get('/admin/jiami','Admin\LoginController@jiami');
