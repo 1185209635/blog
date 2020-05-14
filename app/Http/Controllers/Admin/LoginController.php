@@ -102,7 +102,7 @@ class LoginController extends Controller
 
         // 4. 保存信息到session中
         \session()->put('user',$un);
-
+        // Session()->put('user',$un);
 
         // 5. 跳转到后天首页
         return redirect('admin/index');
